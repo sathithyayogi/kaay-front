@@ -1,23 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
 
+import Button from 'react-bootstrap/Button';
+import DataTable from './component/DataTable'
+import Pagination from 'react-bootstrap/Pagination';
+import 'bootstrap/dist/css/bootstrap.min.css';
 function App() {
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <DataTable />
+      <Pagination>
+        <Pagination.First />
+        <Pagination.Prev />
+        <Pagination.Item key="5" active={false}>
+          1
+        </Pagination.Item>
+        <Pagination.Item key="5" active={false}>
+          2
+        </Pagination.Item>
+        <Pagination.Item key="5" active={false}>
+          3
+        </Pagination.Item>
+        <Pagination.Item key="5" active={true}>
+          4
+        </Pagination.Item>
+        <Pagination.Next />
+        <Pagination.Last />
+      </Pagination>
     </div>
   );
 }
